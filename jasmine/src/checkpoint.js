@@ -130,9 +130,16 @@ String.prototype.toCurrency = function () {
   }
   return output + "." + this.split(".")[1];
 };
-// String.prototype.fromCurrency = function () {
-//   var wholeValue = this.split(".")[0];
-//   for(var i = wholeValue.length - 1 ; i > 0 ; i--){
-//
-//   }
-// };
+String.prototype.fromCurrency = function () {
+  var output = "";
+  var wholeValue = this.split(".")[0];
+  var reversedWholeValue = wholeValue.reverseString();
+  for(var i = 0 ; i < reversedWholeValue.length ; i++){
+    if(this.charAt(i) === ","){
+      continue;
+    }
+    output += this.charAt(i);
+  }
+  return output + "." + this.split(".")[1];
+};
+console.log("123,456,789.191".fromCurrency());
