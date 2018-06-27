@@ -50,7 +50,7 @@ String.prototype.isSmallLetter = function () {
 String.prototype.inverseCase = function () {
   var output = "";
   for(var i = 0 ; i < this.length ; i++){
-    if(this.charAt(i).isCapitalLetter() == true){
+    if(this.charAt(i).isCapitalLetter() === true){
       output += this.charAt(i).toLower();
     }else{
       output += this.charAt(i).toUpper();
@@ -103,23 +103,33 @@ String.prototype.numberWords = function () {
 };
 
 String.prototype.isDigit = function(){
-  if(/\d+?/.test(this) && !(this.length > 1)){
-    return true;
-  }
-  return false;
+  return /\d+?/.test(this) && !(this.length > 1);
 };
 
 // String.prototype.doubleCheck = function () {
 //   return /.{2}/.test(this);
 // };
 
-// String.prototype.toCurrency = function () {
-//   var wholeValue = this.split(".")[0];
-//   for(var i = wholeValue.length - 1 ; i > 0 ; i--){
-//
-//   }
-// };
-//
+String.prototype.reverseString = function(){
+  var output = "";
+  for(var i = this.length ; i > -1 ; i--){
+    output += this.charAt(i);
+  }
+  return output;
+};
+
+String.prototype.toCurrency = function () {
+  var output = "";
+  var wholeValue = this.split(".")[0];
+  var reversedWholeValue = wholeValue.reverseString();
+  for(var i = 0 ; i < reversedWholeValue.length ; i++){
+    if(i % 3 === 0 && (i !== 0)){
+        output += ",";
+    }
+    output += this.charAt(i);
+  }
+  return output + "." + this.split(".")[1];
+};
 // String.prototype.fromCurrency = function () {
 //   var wholeValue = this.split(".")[0];
 //   for(var i = wholeValue.length - 1 ; i > 0 ; i--){
