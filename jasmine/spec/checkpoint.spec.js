@@ -66,7 +66,7 @@ describe('Checkpoint Testing', function () {
 
   it('returns the numbers in the strings in word form', function () {
     var testValue = '345';
-    expect(testValue.numberWords()).toEqual('three four five ');
+    expect(testValue.numberWords()).toEqual('three four five');
   });
 
   it('checks if an input is a single digit', function () {
