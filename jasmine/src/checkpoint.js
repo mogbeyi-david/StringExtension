@@ -103,7 +103,8 @@ String.prototype.numberWords = function () {
 };
 
 String.prototype.isDigit = function () {
-  return /\d+?/.test(this) && !(this.length > 1);
+  // return /\d+?/.test(this) && !(this.length > 1);
+  return /^\d{1,1}$/.test(this);
 };
 
 // String.prototype.doubleCheck = function () {
