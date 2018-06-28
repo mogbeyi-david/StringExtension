@@ -73,4 +73,14 @@ describe('Checkpoint Testing', function () {
     var testValue = '3';
     expect(testValue.isDigit()).toBeTruthy();
   });
+
+  it('converts a string to currency form', function () {
+    var testValue = '123456789.111';
+    expect(testValue.toCurrency()).toEqual('123,456,789.111');
+  });
+
+  it('converts a string in currency form to string form', function () {
+    var testValue = '123,456,789.111';
+    expect(testValue.fromCurrency()).toEqual('123456789.111');
+  });
 });
