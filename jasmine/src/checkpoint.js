@@ -64,8 +64,7 @@ String.prototype.alternatingCase = function () {
   for (var i = 0; i < this.length; i++) {
     if (i % 2 !== 0 && this.charAt(i).isCapitalLetter() === false) {
       output += this.charAt(i).toUpper();
-    }
-    else if (i % 2 === 0 && this.charAt(i).isSmallLetter() === false) {
+    } else if (i % 2 === 0 && this.charAt(i).isSmallLetter() === false) {
       output += this.charAt(i).toLower();
     } else {
       output += this.charAt(i);

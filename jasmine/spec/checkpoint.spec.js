@@ -20,7 +20,7 @@ describe('Checkpoint Testing', function () {
   });
 
   it('checks if the given string is a question', function () {
-    var testValue = 'Is this a question?';
+    var testValue = '?';
     expect(testValue.isQuestion()).toBeTruthy();
   });
 
